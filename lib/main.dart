@@ -1,6 +1,8 @@
 import 'package:aog/widgets/input.widget.dart';
 import 'package:aog/widgets/loading-button.widget.dart';
 import 'package:aog/widgets/logo.widget.dart';
+import 'package:aog/widgets/submit-form.widget.dart';
+import 'package:aog/widgets/success.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 
@@ -31,52 +33,12 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           Logo(),
-          Container(
-            margin: EdgeInsets.all(30),
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.8),
-              borderRadius: BorderRadius.circular(25),
-            ),
-            child: Column( 
-              children: <Widget>[
-                SizedBox(
-                  height: 50,
-
-                ),
-                Text(
-                  "Compensa utilizar álcool",
-                  style: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontFamily: "Big Shoulders Display",
-                    fontSize: 40,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox( 
-                  height: 20,
-                ),
-                 LoadingButton(
+       
+          SubmitForm(
+            alcCtrl: _alcCtrl,
+            gasCtrl: _gasCtrl,
+            submitFunc: () {},
             busy: false,
-            func: (){},
-            text: "CALCULAR NOVAMENTE",
-            invert: true,
-          ),
-              ]
-            ),
-          ),
-          Input(
-            ctrl: _gasCtrl,
-            label: "Gasolina",
-          ),
-          Input(
-            ctrl: _alcCtrl,
-            label: "Álcool",
-          ),
-          LoadingButton(
-            busy: true,
-            func: (){},
-            text: "CALCULAR",
-            invert: false,
           ),
         ],
       ),

@@ -28,19 +28,22 @@ class HomePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           Logo(),
-          TextFormField(
-            controller: _gasCtrl,
-            keyboardType: TextInputType.number,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 45,
-              fontFamily: "Big Shoulders Display",
-            ),
-            decoration: InputDecoration(
-              border: InputBorder.none,
-            )
-          ),
-          
+          Row(
+            children: <Widget>[
+              TextFormField(
+                controller: _gasCtrl,
+                keyboardType: TextInputType.number,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 45,
+                  fontFamily: "Big Shoulders Display",
+                ),
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                ),
+              ),
+            ],
+          )
         ],
       ),
     );
